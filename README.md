@@ -55,9 +55,9 @@ npm start  # or the relevant command for your framework
 
 ### **Screenshots**  
 ![Screenshot1](#) -[Screenshot 2025-02-08 165801](https://github.com/user-attachments/assets/fa256ce3-f6e6-4fe0-87b0-30a0323f2190)
-1](#) - **Budget Management Interface**  
+- **Budget Management Interface**  
 ![Screenshot2](#) - *![Screenshot 2025-02-08 165818](https://github.com/user-attachments/assets/3306fd88-6022-4f60-a847-85765841712e)
-*Expense Tracking System**  
+*Finance Tracking System**  
 ![Screenshot3](#) - **Expense Splitter Feature**  
 ![Screenshot 2025-02-08 165843](https://github.com/user-attachments/assets/5cad1b06-aa72-42e7-9d84-7ff1ef5637fb)
 ![Screenshot 2025-02-08 171343](https://github.com/user-attachments/assets/a1708ada-6f77-4849-b0ef-0f8624805f54)

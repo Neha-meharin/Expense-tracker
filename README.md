@@ -54,7 +54,7 @@ npm start  # or the relevant command for your framework
 ## **Project Documentation**  
 
 ### **Screenshots**  
-![Screenshot1](#) -[Screenshot 2025-02-08 165801](https://github.com/user-attachments/assets/fa256ce3-f6e6-4fe0-87b0-30a0323f2190)
+![Screenshot1](#) -*![Screenshot 2025-02-08 165801](https://github.com/user-attachments/assets/fa256ce3-f6e6-4fe0-87b0-30a0323f2190)
 - **Budget Management Interface**  
 ![Screenshot2](#) - *![Screenshot 2025-02-08 165818](https://github.com/user-attachments/assets/3306fd88-6022-4f60-a847-85765841712e)
 *Finance Tracking System**  

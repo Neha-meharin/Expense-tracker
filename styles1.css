@@ -1,0 +1,222 @@
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    margin: 0;
+    padding: 0;
+    background-color: #1e1e2e;
+    color: white;
+}
+
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #27293d;
+    padding: 15px 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.logo span {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 10px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    background: #3b3e5a;
+    border-radius: 5px;
+}
+
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #f0a500;
+    margin-right: 10px;
+}
+
+
+.xp-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+}
+
+.xp-progress {
+    width: 100px;
+    height: 10px;
+    background: #555;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+#xp-fill {
+    width: 30%;
+    height: 100%;
+    background: #f0a500;
+}
+
+
+#menu-toggle {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-left: 15px;
+}
+/* body content*/
+
+
+
+
+.container {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    justify-content: space-between;
+    height:600px;
+    padding-top:25px;
+}
+
+.box challenges{
+    padding-left:25px;
+}
+.box {
+    width: 25%;
+    padding: 20px;
+   
+    background: #27293d;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    border: 3px solid #f0a500;
+    text-align: center;
+}
+
+h2 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #f0a500;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    font-size: 12px;
+    margin-bottom: 10px;
+    padding: 10px;
+    background: #3b3e5a;
+    border-radius: 5px;
+}
+
+.roadmap {
+    width: 40%;
+    text-align: center;
+}
+
+.progress {
+    
+    width: 80%;
+    height: 15px;
+    background: #555;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 15px auto;
+}
+
+#xp-fill {
+    width: 30%;
+    height: 100%;
+    background: #f0a500;
+    transition: width 1s ease-in-out;
+}
+
+/* Level Indicators */
+.levels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .box, .roadmap {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background: #27293d;
+        width: 100%;
+        padding: 15px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    #menu-toggle {
+        display: block;
+    }
+}

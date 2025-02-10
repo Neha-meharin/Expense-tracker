@@ -19,27 +19,16 @@
             align-items: center;
         }
         .logo {
-    display: flex;
-    align-items: center;
-}
-.avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 2px solid #f0a500;
-    margin-right: 10px;
-}
-
-.logo img {
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
-}
-
-.logo span {
-    font-size: 16px;
-    font-weight: bold;
-}
+            display: flex;
+            align-items: center;
+        }
+        .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid #f0a500;
+            margin-right: 10px;
+        }
         .navbar{
             position: fixed;
             top: 0;
@@ -53,60 +42,56 @@
             z-index: 1000;
             height:30px;
         }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            padding: 0;
-        }
-
-        .nav-links li {
-            margin: 0 10px;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            padding: 8px 12px;
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover {
-            background: #3b3e5a;
-            border-radius: 5px;
-        }
         
+
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.logo span {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 10px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    background: #3b3e5a;
+    border-radius: 5px;
+}
+
+
 .user-info {
     display: flex;
     align-items: center;
 }
 
 
-        .container {
-            display: flex;
-            justify-content: space-between;
-            width: 90%;
-            max-width: 1200px;
-            margin-top: 20px;
-        }
 
-        .box {
-            width: 30%;
-            padding: 20px;
-            background: #27293d;
-            border-radius: 10px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-            border: 3px solid #f0a500;
-            text-align: center;
-        }
-
-        input, button {
-            display: block;
-            margin: 10px auto;
-            padding: 10px;
-            font-size: 14px;
-        }
-       
 .xp-bar {
     display: flex;
     flex-direction: column;
@@ -128,12 +113,6 @@
     height: 100%;
     background: #f0a500;
 }
-.levels {
-    display: flex;
-    justify-content: space-between;
-    font-size: 12px;
-    margin-top: 10px;
-}
 
 
 #menu-toggle {
@@ -145,6 +124,28 @@
     cursor: pointer;
     margin-left: 15px;
 }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            width: 90%;
+            max-width: 1200px;
+            margin-top: 20px;
+        }
+        .box {
+            width: 30%;
+            padding: 20px;
+            background: #27293d;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+            border: 3px solid #f0a500;
+            text-align: center;
+        }
+        input, button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px;
+            font-size: 14px;
+        }
         @media (max-width: 768px) {
             .container {
                 flex-direction: column;
@@ -164,9 +165,11 @@
             <span>PocketHero</span>
         </div>
         <ul class="nav-links">
-            <li><a href="index1.html">🏠 Home</a></li>
-            <li><a href="#">🎮 Gamify Budgeting</a></li>
-            <li><a href="#">📅 Challenges</a></li>
+             <li><a href="index1.html">🏠 Home</a></li>
+            
+         <li><a href="insights.html">📊 Insights</a></li>
+           <li><a href="#">📅 Challenges</a></li> 
+            <!---  <li><a href="#">🤝 Community</a></li>--->
             <li><a href="#">💰 Savings</a></li>
         </ul>
         <div class="user-info">
@@ -178,6 +181,7 @@
             <button id="menu-toggle">☰</button>
         </div>
     </nav>
+   
 
     <div class="container">
         <div class="box">
@@ -196,7 +200,7 @@
         <div class="box">
             <h2>💸 Expense Splitter</h2>
             <input type="text" id="expense-name" placeholder="Expense Name">
-            <input type="number" id="expense-amount" placeholder="Amount">
+            <input type="number" id="split-amount" placeholder="Amount">
             <input type="number" id="num-people" placeholder="Number of People">
             <button onclick="splitExpense()">Split</button>
             <p id="split-result"></p>
@@ -205,7 +209,7 @@
     </div>
 
     <script>
-      let totalBudget = 0;
+        let totalBudget = 0;
         let totalExpenses = 0;
 
         function setBudget() {
@@ -232,13 +236,13 @@
             const amount = parseFloat(document.getElementById("split-amount").value) || 0;
             const numPeople = parseInt(document.getElementById("num-people").value) || 1;
             
-            if (name && amount > 0) {
+            if (name && amount > 0 && numPeople > 0) {
+                const perPersonAmount = (amount / numPeople).toFixed(2);
                 const list = document.getElementById("expense-list");
                 const item = document.createElement("li");
-                const perPersonAmount = (amount / numPeople).toFixed(2);
-                item.textContent = `${name}: $${amount} (Each pays: $${perPersonAmount})`;
+                item.textContent = `${name}: Each pays: $${perPersonAmount}`;
                 list.appendChild(item);
-                totalExpenses += amount;
+                totalExpenses += parseFloat(perPersonAmount);
                 updateRemainingBudget();
             }
         }
@@ -246,6 +250,40 @@
         function updateRemainingBudget() {
             document.getElementById("remaining-budget").textContent = (totalBudget - totalExpenses).toFixed(2);
         }
+        function setBudget() {
+    totalBudget = parseFloat(document.getElementById("budget").value) || 0;
+    localStorage.setItem("totalBudget", totalBudget);
+    updateRemainingBudget();
+}
+
+function addExpense() {
+    const description = document.getElementById("expense-description").value;
+    const amount = parseFloat(document.getElementById("expense-amount").value) || 0;
+    
+    if (description && amount > 0) {
+        totalExpenses += amount;
+        const list = document.getElementById("finance-list");
+        const item = document.createElement("li");
+        item.textContent = `${description}: $${amount.toFixed(2)}`;
+        list.appendChild(item);
+        
+        // Get today's date as YYYY-MM-DD
+        const today = new Date().toISOString().split('T')[0];
+
+        // Retrieve existing daily expenses from localStorage
+        let dailyExpenses = JSON.parse(localStorage.getItem("dailyExpenses")) || {};
+
+        // Add today's expense
+        dailyExpenses[today] = (dailyExpenses[today] || 0) + amount;
+
+        // Store updated expenses back in localStorage
+        localStorage.setItem("dailyExpenses", JSON.stringify(dailyExpenses));
+
+        updateRemainingBudget();
+    }
+}
+
+
     </script>
 </body>
 </html>
